@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2312                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    p
+    {
+        solver          		PCG;		//PBiCGStab;  			//GAMG;
+	preconditioner			DIC;
+//	smoother                        symGaussSeidel;
+        tolerance       		1e-05;		//1e-06;
+        relTol          		0.001;		//0.001;
+//	cacheAgglomeration 		yes;
+//	agglomerator 			faceAreaPair;
+//	nCellsInCoarsestLevel 		1050;
+//	directSolveCoarsest		no;
+//	mergeLevels 			1;
+	maxIter				5000;
+	minIter				3;
+    }
+
+    pFinal
+    {
+        solver				PCG;		//PBiCGStab;
+	preconditioner			DIC;
+//	smoother			symGaussSeidel;
+        tolerance       		5e-08;
+	relTol				0;
+	minIter         		3;
+//	cacheAgglomeration 		yes;
+//	agglomerator			faceAreaPair;
+//	nCellsInCoarsestLevel		1050;
+//	directSolveCoarsest		no;
+//	mergeLevels			1;
+	maxIter				5000;
+    }
+
+    U
+    {
+        solver          smoothSolver;
+        smoother        GaussSeidel;
+        tolerance       1e-08;			//1e-08;
+        relTol          0.001;			//0.001;
+	maxIter		5000;
+	minIter         3;
+    }
+
+   UFinal
+    {
+        $U;
+        tolerance       0;
+	minIter         3;
+//  	maxIter		5000;
+    }
+}
+
+
+PISO
+{
+	nOuterCorrectors 		0;	//2
+	nCorrectors    			3;	//3
+    	nNonOrthogonalCorrectors 	1;
+	turbOnFinalIterOnly  		no;
+}
+
+
+// ************************************************************************* //
