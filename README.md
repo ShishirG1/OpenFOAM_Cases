@@ -1,6 +1,8 @@
 # OpenFOAM_Cases
 
-This is the OpenFOAM case for the 2D incompressible flow simulation over an airfoil at an 5 degree angle of attack. Please refer to this: https://doi.org/10.1017/S0022112008000864 (Direct numerical simulations of forced and unforced separation bubbles on an airfoil at incidence: Jones et al.) and https://doi.org/10.1063/1.5126663 (Boundary layer transition over a foil using direct numerical simulation and large eddy simulation: Simth and Ventikos) papers for more info.
+This is the OpenFOAM case for the 2D incompressible flow simulation over an airfoil at an 5 degree angle of attack. Please refer to this: https://doi.org/10.1017/S0022112008000864 (Direct numerical simulations of forced and unforced separation bubbles on an airfoil at incidence by Jones et al.) and https://doi.org/10.1063/1.5126663 (Boundary layer transition over a foil using direct numerical simulation and large eddy simulation by Simth and Ventikos) papers for more info.
+
+For any queries reach out at: "shishir dot gautam at okstate dot edu"
 
 The LES turbulence model with WALE SGS model is used in the provided case. Please feel free to test this case with different turbulence models and compare the results (Coefficient of pressure plots) with those aforementioned papers.
 
