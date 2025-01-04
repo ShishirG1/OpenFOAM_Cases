@@ -6,7 +6,7 @@ For any queries reach out at: "shishir dot gautam at okstate dot edu"
 
 The LES turbulence model with WALE SGS model is used in the provided case. Please feel free to test this case with different turbulence models and compare the results (Coefficient of pressure plots) with those aforementioned papers.
 
-The results from checkMesh of this case are attached:
+The results from checkMesh of this case are:
 
 Mesh stats 
     points:           2078398
